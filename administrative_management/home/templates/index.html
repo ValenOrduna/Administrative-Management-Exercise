@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Home - Administrative Managment</title>
+  </head>
+  <body>
+    <header class="text-center p-4">
+      <h1 class="font-extrabold text-purple-800 text-4xl">
+        Administrative Managment
+      </h1>
+    </header>
+    <main class="w-[80%] mx-auto">
+      {% if profile %}
+      <div
+        class="text-center w-[28%] space-y-5 border-2 border-purple-800 rounded-md p-8"
+      >
+        <h2 class="font-bold text-2xl text-purple-800 uppercase">Profile</h2>
+        <form class="space-y-5" action="profile/update">
+          <div class="flex text-center items-center space-x-3 opacity-50">
+            <label class="text-lg font-bold uppercase w-[90px]">Name</label>
+            <input
+              disabled
+              class="w-[250px] p-1 border-2 border-purple-800 rounded-md pl-4"
+              name="name"
+              value="{{profile.name}}"
+              type="text"
+            />
+          </div>
+
+          <div class="flex text-center items-center space-x-3 opacity-50">
+            <label class="text-lg font-bold uppercase w-[90px]">Dni</label>
+            <input
+              disabled
+              class="w-[250px] p-1 border-2 border-purple-800 rounded-md pl-4"
+              name="dni"
+              value="{{profile.dni}}"
+              type="text"
+            />
+          </div>
+
+          <div class="flex text-center items-center space-x-3">
+            <label class="text-lg font-bold uppercase w-[90px]">Address</label>
+            <input
+              class="w-[250px] p-1 border-2 border-purple-800 rounded-md pl-4"
+              name="address"
+              value="{{profile.address}}"
+              type="text"
+            />
+          </div>
+
+          <div class="flex text-center items-center space-x-3">
+            <label class="text-lg font-bold uppercase w-[90px]">Phone</label>
+            <input
+              class="w-[250px] p-1 border-2 border-purple-800 rounded-md pl-4"
+              name="phone"
+              value="{{profile.phone}}"
+              type="text"
+            />
+          </div>
+
+          <div class="flex text-center items-center space-x-3 opacity-50">
+            <label class="text-lg font-bold uppercase w-[90px]">Badge</label>
+            <input
+              disabled
+              class="w-[250px] p-1 border-2 border-purple-800 rounded-md pl-4"
+              name="badge"
+              value="{{profile.badge}}"
+              type="text"
+            />
+          </div>
+
+          <div class="flex text-center items-center space-x-3 opacity-50">
+            <label class="text-lg font-bold uppercase w-[90px]">Agency</label>
+            <input
+              disabled
+              class="w-[250px] p-1 border-2 border-purple-800 rounded-md pl-4"
+              name="agency"
+              value="{{profile.agency.name}}"
+              type="text"
+            />
+          </div>
+          <div class="w-[150px] mx-auto">
+            <input
+              class="w-full py-1 bg-purple-800 font-bold text-white rounded-md"
+              type="submit"
+              value="Update profile"
+            />
+          </div>
+        </form>
+      </div>
+      {% endif %}
+    </main>
+  </body>
+</html>
