@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="text-center space-y-10 mt-32">
+      <h1 class="text-4xl font-extrabold uppercase">Login</h1>
+      <form
+        class="w-[40%] mx-auto border-2 border-purple-800 rounded-md space-y-10 py-10"
+        method="POST"
+      >
+        {% csrf_token %}
+        <div
+          class="w-[90%] mx-auto flex flex-col items-center text-center space-y-5"
+        >
+          <label
+            class="text-2xl font-bold uppercase text-purple-800"
+            for="username"
+            >Username</label
+          >
+          <input
+            class="w-full border-2 border-purple-800 rounded-md p-3"
+            name="username"
+            id="username"
+            placeholder="Your username"
+            type="text"
+          />
+        </div>
+
+        <div
+          class="w-[90%] mx-auto flex flex-col items-center text-center space-y-5"
+        >
+          <label
+            class="text-2xl font-bold uppercase text-purple-800"
+            for="password"
+            >Password</label
+          >
+          <input
+            class="w-full border-2 border-purple-800 rounded-md p-3"
+            name="password"
+            id="password"
+            placeholder="Your Password"
+            type="password"
+          />
+        </div>
+        {% if alert %}
+        <div class="w-full p-4 text-center bg-red-400">
+          <span class="font-bold text-white text-lg">{{alert}}</span>
+        </div>
+        {% endif %}
+        <input
+          class="w-[40%] py-2 bg-purple-800 text-white font-bold uppercase cursor-pointer"
+          type="submit"
+          value="Log in"
+        />
+      </form>
+    </div>
+  </body>
+</html>
