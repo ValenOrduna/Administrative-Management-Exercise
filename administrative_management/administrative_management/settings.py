@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'login',
     'agencies',
     'officers',
-    'home'
+    'home',
+    'citations'
 ]
 
 MIDDLEWARE = [

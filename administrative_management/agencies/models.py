@@ -1,5 +1,6 @@
 from django.db import models
 
+# Modelo Agencia
 class Agency(models.Model):
     name = models.CharField(max_length=30)
     idAgency = models.CharField(max_length=30)

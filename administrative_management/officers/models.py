@@ -1,6 +1,7 @@
 from django.db import models
 from agencies.models import Agency
 
+# Modelo Oficial
 class Officer(models.Model):
     name = models.CharField(max_length=30)
     dni = models.CharField(max_length=30)
