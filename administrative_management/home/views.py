@@ -3,9 +3,10 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_protect
 from officers.models import Officer
 from agencies.models import Agency
+from citations.models import Citation
 from home.forms.officerForm import OfficerForm
 
-# Vista Home
+# Controller Home
 # Validamos si el usuario ya esta logueado, sino lo redirigimos al login
 @login_required(login_url='/login')
 def home(request):
@@ -18,18 +19,25 @@ def home(request):
             # Si se encuentra el usuario se renderiza el template sino reddiccionara a login
             try:
                 findUser = Officer.objects.get(name=user) 
-                return render(request,'index.html',{'profile':findUser} )
+                findCitations = Citation.objects.filter(officer=findUser).order_by('-id')
+                return render(request,'index.html',{'profile':findUser,'citations':findCitations} )
             except Exception as e:
                 return redirect('/login')
     # Comprobamos si el usuario es un Clerk
     if request.user.groups.filter(name='Clerk').exists():
+            # Limpiamos el nombre del usuario para buscarlo en la base de datos
             user = request.user.username
             user = user.replace('_',' ')
             user = user.title()
+            # Si se encuentra el usuario se renderiza el template sino reddiccionara a login
             try:
+                # Obtenemos el usuario
                 findUser = Officer.objects.get(name=user)
-                filterAgency = Officer.objects.filter(agency=findUser.agency)  
-                return render(request,'index.html',{'profiles':filterAgency} )
+                filterAgency = Officer.objects.filter(agency=findUser.agency)
+                # Filtramos los oficiales que pertenecen a la agencia y filtramos las multas de esos oficiales
+                filterOfficer = Officer.objects.filter(agency=findUser.agency)
+                citations = Citation.objects.filter(officer__in=filterOfficer)
+                return render(request,'index.html',{'profiles':filterAgency,'citations':citations} )
             except Exception as e:
                 return redirect('/login')
     return render(request, 'index.html')

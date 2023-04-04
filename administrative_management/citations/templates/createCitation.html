@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Create Citation</title>
+  </head>
+  <body>
+    <div
+      class="w-[80%] mx-auto border-2 border-purple-800 rounded-md flex flex-col justify-center text-center p-10 space-y-10"
+    >
+      <h1 class="font-extrabold text-4xl text-purple-800 uppercase">
+        Create citation
+      </h1>
+      <form class="space-y-10" method="POST">
+        {% csrf_token %}
+        <div class="grid grid-cols-3 gap-10">
+          <div class="flex flex-col justify-center items-center text-center">
+            <label class="font-bold text-xl uppercase" for="route">Route</label>
+            <input
+              class="p-2 border-2 border-purple-800 rounded-md w-full"
+              id="route"
+              name="route"
+              placeholder="Route"
+              type="text"
+            />
+          </div>
+
+          <div class="flex flex-col justify-center items-center text-center">
+            <label class="font-bold text-xl uppercase" for="county"
+              >County</label
+            >
+            <input
+              class="p-2 border-2 border-purple-800 rounded-md w-full"
+              id="county"
+              name="county"
+              placeholder="County"
+              type="text"
+            />
+          </div>
+
+          <div class="flex flex-col justify-center items-center text-center">
+            <label class="font-bold text-xl uppercase" for="city">City</label>
+            <input
+              class="p-2 border-2 border-purple-800 rounded-md w-full"
+              id="city"
+              name="city"
+              placeholder="City"
+              type="text"
+            />
+          </div>
+        </div>
+
+        <div class="text-center space-y-10">
+          <h2
+            class="text-2xl font-bold text-purple-800 border-b-2 border-purple-800"
+          >
+            CONTACT PASSENGER
+          </h2>
+          <div class="grid grid-cols-4 gap-10">
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="oln">Oln</label>
+              <input
+                class="p-2 border-2 border-purple-800 rounded-md w-full"
+                id="oln"
+                name="oln"
+                placeholder="Oln"
+                type="text"
+              />
+            </div>
+
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="oln_number"
+                >Oln number</label
+              >
+              <input
+                class="p-2 border-2 border-purple-800 rounded-md w-full"
+                id="oln_number"
+                name="oln_number"
+                placeholder="Oln number"
+                type="text"
+              />
+            </div>
+
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="license_class"
+                >License_class</label
+              >
+              <input
+                class="p-2 border-2 border-purple-800 rounded-md w-full"
+                id="license_class"
+                name="license_class"
+                placeholder="License class"
+                type="text"
+              />
+            </div>
+
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="cdl">Cdl</label>
+              <select name="cdl" id="cdl">
+                <option value="False">No</option>
+                <option value="True">Yes</option>
+              </select>
+            </div>
+
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="name">Name</label>
+              <input
+                class="p-2 border-2 border-purple-800 rounded-md w-full"
+                id="name"
+                name="name"
+                placeholder="Name"
+                type="text"
+              />
+            </div>
+
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="dob">dob</label>
+              <input
+                class="p-2 border-2 border-purple-800 rounded-md w-full"
+                id="dob"
+                name="dob"
+                type="date"
+              />
+            </div>
+
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="gender"
+                >Gender</label
+              >
+              <select id="gender" name="gender">
+                <option value="feminine">Feminine</option>
+                <option value="masculine">Masculine</option>
+                <option value="other">Other</option></select
+              ><br />
+            </div>
+
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="hair_color"
+                >Hair color</label
+              >
+              <input
+                class="p-2 border-2 border-purple-800 rounded-md w-full"
+                id="hair_color"
+                name="hair_color"
+                placeholder="Hair color"
+                type="text"
+              />
+            </div>
+
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="eye_color"
+                >Eye color</label
+              >
+              <input
+                class="p-2 border-2 border-purple-800 rounded-md w-full"
+                id="eye_color"
+                name="eye_color"
+                placeholder="Eye color"
+                type="text"
+              />
+            </div>
+
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="height"
+                >Height</label
+              >
+              <input
+                class="p-2 border-2 border-purple-800 rounded-md w-full"
+                id="height"
+                name="height"
+                placeholder="Height"
+                type="text"
+              />
+            </div>
+
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="address"
+                >Address</label
+              >
+              <input
+                class="p-2 border-2 border-purple-800 rounded-md w-full"
+                id="address"
+                name="address"
+                placeholder="Address"
+                type="text"
+              />
+            </div>
+
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="city">City</label>
+              <input
+                class="p-2 border-2 border-purple-800 rounded-md w-full"
+                id="city"
+                name="city"
+                placeholder="City"
+                type="text"
+              />
+            </div>
+
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="city_passenger"
+                >City Passenger</label
+              >
+              <input
+                class="p-2 border-2 border-purple-800 rounded-md w-full"
+                id="city_passenger"
+                name="city_passenger"
+                placeholder="City Passenger"
+                type="text"
+              />
+            </div>
+
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="state"
+                >State</label
+              >
+              <input
+                class="p-2 border-2 border-purple-800 rounded-md w-full"
+                id="state"
+                name="state"
+                placeholder="State"
+                type="text"
+              />
+            </div>
+
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="zip_code"
+                >Zip code</label
+              >
+              <input
+                class="p-2 border-2 border-purple-800 rounded-md w-full"
+                id="zip_code"
+                name="zip_code"
+                placeholder="Zip code"
+                type="text"
+              />
+            </div>
+
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="phone"
+                >Phone</label
+              >
+              <input
+                class="p-2 border-2 border-purple-800 rounded-md w-full"
+                id="phone"
+                name="phone"
+                placeholder="Phone"
+                type="text"
+              />
+            </div>
+
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="email"
+                >Email</label
+              >
+              <input
+                class="p-2 border-2 border-purple-800 rounded-md w-full"
+                id="email"
+                name="email"
+                placeholder="Email"
+                type="email"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center space-y-10">
+          <h2
+            class="text-2xl font-bold text-purple-800 border-b-2 border-purple-800"
+          >
+            VEHICLE TYPE PASSENGER CAR
+          </h2>
+          <div class="grid grid-cols-4 gap-10">
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="vin">Vin</label>
+              <input
+                class="p-2 border-2 border-purple-800 rounded-md w-full"
+                id="vin"
+                name="vin"
+                placeholder="Vin"
+                type="text"
+              />
+            </div>
+
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="color"
+                >Color</label
+              >
+              <input
+                class="p-2 border-2 border-purple-800 rounded-md w-full"
+                id="color"
+                name="color"
+                placeholder="Color"
+                type="text"
+              />
+            </div>
+
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="year">Year</label>
+              <input
+                class="p-2 border-2 border-purple-800 rounded-md w-full"
+                id="year"
+                name="year"
+                placeholder="Year"
+                type="text"
+              />
+            </div>
+
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="make">Make</label>
+              <input
+                class="p-2 border-2 border-purple-800 rounded-md w-full"
+                id="make"
+                name="make"
+                placeholder="Make"
+                type="text"
+              />
+            </div>
+
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="model"
+                >Model</label
+              >
+              <input
+                class="p-2 border-2 border-purple-800 rounded-md w-full"
+                id="model"
+                name="model"
+                placeholder="Model"
+                type="text"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center space-y-10">
+          <h2
+            class="text-2xl font-bold text-purple-800 border-b-2 border-purple-800"
+          >
+            FACTORS
+          </h2>
+          <div class="grid grid-cols-4 gap-10">
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="crash"
+                >Crash</label
+              >
+              <select name="crash" id="crash">
+                <option value="False">No</option>
+                <option value="True">Yes</option>
+              </select>
+            </div>
+
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="passengers"
+                >Passengers</label
+              >
+              <select name="passengers" id="passengers">
+                <option value="False">No</option>
+                <option value="True">Yes</option>
+              </select>
+            </div>
+
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="spanish_speaker"
+                >Spanish speaker</label
+              >
+              <select name="spanish_speaker" id="spanish_speaker">
+                <option value="False">No</option>
+                <option value="True">Yes</option>
+              </select>
+            </div>
+
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="in_car_video"
+                >In car video</label
+              >
+              <select name="in_car_video" id="in_car_video">
+                <option value="False">No</option>
+                <option value="True">Yes</option>
+              </select>
+            </div>
+
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="body_camera"
+                >Body camera</label
+              >
+              <select name="body_camera" id="body_camera">
+                <option value="False">No</option>
+                <option value="True">Yes</option>
+              </select>
+            </div>
+
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="school_zone"
+                >School zone</label
+              >
+              <select name="school_zone" id="school_zone">
+                <option value="False">No</option>
+                <option value="True">Yes</option>
+              </select>
+            </div>
+
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="construction_zone"
+                >Construction zone</label
+              >
+              <select name="construction_zone" id="construction_zone">
+                <option value="False">No</option>
+                <option value="True">Yes</option>
+              </select>
+            </div>
+
+            <div class="flex flex-col justify-center items-center text-center">
+              <label class="font-bold text-xl uppercase" for="workers_present"
+                >Workers present</label
+              >
+              <select name="workers_present" id="workers_present">
+                <option value="False">No</option>
+                <option value="True">Yes</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center space-y-10">
+          <h2
+            class="text-2xl font-bold text-purple-800 border-b-2 border-purple-800"
+          >
+            VIOLATIONS
+          </h2>
+          <textarea
+            class="border-2 border-purple-800 rounded-md"
+            name="violations"
+            id="violations"
+            cols="50"
+            rows="10"
+          ></textarea>
+        </div>
+
+        <div class="text-center space-y-10">
+          <h2
+            class="text-2xl font-bold text-purple-800 border-b-2 border-purple-800"
+          >
+            OFFICER NOTE
+          </h2>
+          <textarea
+            class="border-2 border-purple-800 rounded-md"
+            name="officer_note"
+            id="officer_note"
+            cols="50"
+            rows="10"
+          ></textarea>
+        </div>
+        <input
+          class="py-2 w-[80%] bg-purple-800 rounded-md text-white font-extrabold uppercase cursor-pointer"
+          type="submit"
+          value="Upload citation"
+        />
+        {% if alert %} {% if alert.success %}
+        <div class="w-full p-4 bg-green-500 font-bold text-center text-white">
+          <span>{{alert.success}}</span>
+        </div>
+        {% else %}
+
+        <div class="w-full p-4 bg-red-500 font-bold text-center text-white">
+          <span>{{alert.error}}</span>
+        </div>
+        {% endif %} {% endif %}
+      </form>
+    </div>
+  </body>
+</html>

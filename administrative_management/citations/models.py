@@ -17,8 +17,8 @@ class Citation(models.Model):
     name = models.CharField(max_length=50)
     dob = models.DateField()
     gender = models.CharField(max_length=10)
-    hair_color = models.CharField(max_length=10,null=True)
-    eye_color = models.CharField(max_length=10,null=True)
+    hair_color = models.CharField(max_length=10,null=True,default='')
+    eye_color = models.CharField(max_length=10,null=True,default='')
     height = models.CharField(max_length=8)
     address = models.CharField(max_length=50)
     city_passenger = models.CharField(max_length=50)
@@ -46,5 +46,5 @@ class Citation(models.Model):
     # Datos Oficial
     officer = models.ForeignKey(Officer,on_delete=models.CASCADE)
     # Nota Oficial
-    officer_note = models.CharField(max_length=100,null=True)
+    officer_note = models.CharField(max_length=100,null=True,default='')
     
