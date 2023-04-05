@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_protect
+from home.helpers.cleanUser import cleanUser
 from officers.models import Officer
 from agencies.models import Agency
 from citations.models import Citation
@@ -13,9 +14,7 @@ def home(request):
     # Comprobamos si el usuario es un Officer
     if request.user.groups.filter(name='Officer').exists():
             # Limpiamos el nombre del usuario para buscarlo en la base de datos
-            user = request.user.username
-            user = user.replace('_',' ')
-            user = user.title()
+            user = cleanUser(request.user.username)
             # Si se encuentra el usuario se renderiza el template sino reddiccionara a login
             try:
                 findUser = Officer.objects.get(name=user) 
@@ -26,9 +25,7 @@ def home(request):
     # Comprobamos si el usuario es un Clerk
     if request.user.groups.filter(name='Clerk').exists():
             # Limpiamos el nombre del usuario para buscarlo en la base de datos
-            user = request.user.username
-            user = user.replace('_',' ')
-            user = user.title()
+            user = cleanUser(request.user.username)
             # Si se encuentra el usuario se renderiza el template sino reddiccionara a login
             try:
                 # Obtenemos el usuario

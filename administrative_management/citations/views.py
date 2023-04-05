@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from citations.models import Citation
 from django.contrib.auth.decorators import login_required
 from datetime import datetime
+from home.helpers.cleanUser import cleanUser
 from officers.models import Officer
 from citations.forms.citationForm import CitationForm
 
@@ -27,9 +28,7 @@ def createCitation(request):
             if form.is_valid():
                 try:
                     # Si el formulario es valido subimos datos restantes para completar el ingreso a la base de datos
-                    user = request.user.username
-                    user = user.replace('_',' ')
-                    user = user.title()
+                    user = cleanUser(request.user.username)
                     officer = Officer.objects.get(name=user)
                     now = datetime.now()
                     form.cleaned_data['violationDate'] = now.strftime("%Y-%m-%d")

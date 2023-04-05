@@ -1,7 +1,7 @@
 from django.contrib import admin
 from citations.models import Citation
 from officers.models import Officer
-from agencies.models import Agency
+from home.helpers.cleanUser import cleanUser
 
 # Configuracion del modelo admin Citation
 class CitationAdmin(admin.ModelAdmin):
@@ -9,9 +9,8 @@ class CitationAdmin(admin.ModelAdmin):
     search_fields = ('violationDate','violationTime','route','county','city','oln','oln_number','license_class','cdl','name','dob','gender','hair_color','eye_color','height','address','city','state','zip_code','phone','vin','color','year','make','model','crash','passengers','spanish_speaker','in_car_video','body_camera','school_zone','construction_zone','workers_present','violations','officer')
     # Funcion mostrar filas
     def get_queryset(self, request):
-        user = request.user.username
-        user = user.replace('_',' ')
-        user = user.title()
+        # Limpiamos el usuario
+        user = cleanUser(request.user.username)
         qs = super().get_queryset(request)
         if request.user.groups.filter(name='Admin').exists():
             return qs

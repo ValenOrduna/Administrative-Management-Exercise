@@ -1,15 +1,15 @@
 from django.contrib import admin
 from officers.models import Officer
 from agencies.models import Agency
+from home.helpers.cleanUser import cleanUser
 class OfficerAdmin(admin.ModelAdmin):
     list_display = ('name','badge','agency')
     search_fields = ('name','badge','agency')
     
     # Configuracion del las opciones de agencias
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
-        user = request.user.username
-        user = user.replace('_',' ')
-        user = user.title()
+        # Limpamos el usuario
+        user = cleanUser(request.user.username)
         # Validamos el rol del usuario
         if request.user.groups.filter(name='Clerk').exists():
             # Realizamos query y obtenemos la agencia del usuario
@@ -26,9 +26,7 @@ class OfficerAdmin(admin.ModelAdmin):
         return super().formfield_for_foreignkey(db_field, request, **kwargs)
     # Funcion mostrar filas
     def get_queryset(self, request):
-        user = request.user.username
-        user = user.replace('_',' ')
-        user = user.title()
+        user = cleanUser(request.user.username)
         qs = super().get_queryset(request)
         # Si el usuario es Oficial solamente podra cambiar su usuario
         if request.user.groups.filter(name='Officer').exists():

@@ -99,7 +99,9 @@
         <h2 class="font-bold text-2xl text-purple-800 uppercase">Citations</h2>
         {% for citation in citations %}
         <div class="flex justify-center items-center space-x-4">
-          <h2 class="font-bold uppercase">{{citation.violationDate}}</h2>
+          <h2 class="font-bold uppercase">
+            {{citation.violationDate}} {{citation.violationTime}}
+          </h2>
           <a
             class="p-2 bg-purple-800 text-white font-bold rounded-md cursor-pointer"
             href="citation/{{citation.id}}"
