@@ -5,15 +5,6 @@ Administrative Management es un proyecto diseñado para la administración de un
 ## Requisitos
 
 - Tener instalado Python 3 en el equipo.
-- # Tener dependencia Django instalada
-
-# Administrative Management Civitec
-
-Administrative Management es un proyecto diseñado para la administración de un sistema de multas de la policía de manera sencilla y segura. Este sistema permite acceder a los datos de manera fácil y rápida, mientras mantiene la seguridad necesaria para el uso de los mismos. El objetivo de este proyecto es facilitar la visualización, actualización o inserción de datos, brindando una herramienta eficiente y efectiva para la gestión de multas.
-
-## Requisitos
-
-- Tener instalado Python 3 en el equipo.
 - Tener dependencia Django instalada
 
 ## Instalación
