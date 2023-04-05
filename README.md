@@ -15,7 +15,6 @@ Administrative Management es un proyecto diseñado para la administración de un
 
 - Tener instalado Python 3 en el equipo.
 - Tener dependencia Django instalada
-  > > > > > > > e2a37815b3ca4d3094056ad57fb9746f54fff224
 
 ## Instalación
 
@@ -43,8 +42,7 @@ Pasos a seguir para la instalacion del proyecto:
 
 ## Tecnologías
 
-> > > > > > > e2a37815b3ca4d3094056ad57fb9746f54fff224
-> > > > > > > El proyecto se realizo con el Framework Django. Uno de los principales beneficios de Django es su arquitectura de modelos, que me permitió crear y administrar fácilmente los modelos de base de datos necesarios para la aplicación. También utilicé muchas de las aplicaciones integradas de Django, como el panel de administración y el sistema de autenticación de usuarios, lo que me permitió crear una aplicación robusta y segura.
+El proyecto se realizo con el Framework Django. Uno de los principales beneficios de Django es su arquitectura de modelos, que me permitió crear y administrar fácilmente los modelos de base de datos necesarios para la aplicación. También utilicé muchas de las aplicaciones integradas de Django, como el panel de administración y el sistema de autenticación de usuarios, lo que me permitió crear una aplicación robusta y segura.
 
 En cuanto al diseño y estilos, utilicé Tailwind. Elegí Tailwind por su facilidad de uso y su capacidad para personalizar los estilos con facilidad. Me gustó especialmente la forma en que Tailwind utiliza clases predefinidas para estilizar los componentes, lo que me permitió trabajar con el HTML y CSS de una manera más sencilla y organizada.
 
@@ -72,6 +70,6 @@ Además, se pueden insertar nuevos endpoints en la aplicación para agregar más
 
 ## Contacto
 
-> > > > > > > e2a37815b3ca4d3094056ad57fb9746f54fff224
-> > > > > > > [Linkedin](https://www.linkedin.com/in/valentinorduna/)
-> > > > > > > [GitHub](https://github.com/ValenOrduna)
+[Linkedin](https://www.linkedin.com/in/valentinorduna/)
+
+[GitHub](https://github.com/ValenOrduna)
