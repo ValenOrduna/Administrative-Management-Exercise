@@ -40,6 +40,11 @@ def home(request):
                 return render(request,'index.html',{'profiles':filterAgency,'citations':citations} )
             except Exception as e:
                 return redirect('/login')
+    # Comprobamos si el usuario es un Admin
+    if request.user.groups.filter(name='Admin').exists():
+        findUsers = Officer.objects.filter()
+        findCitations = Citation.objects.filter()
+        return render(request,'index.html',{'profiles':findUsers,'citations':findCitations} )
     return render(request, 'index.html')
 
 

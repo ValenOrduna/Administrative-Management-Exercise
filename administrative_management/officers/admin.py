@@ -23,15 +23,13 @@ class OfficerAdmin(admin.ModelAdmin):
             
             except Exception as e:
                 print(e)
-            return super().formfield_for_foreignkey(db_field, request, **kwargs)
+        return super().formfield_for_foreignkey(db_field, request, **kwargs)
     # Funcion mostrar filas
     def get_queryset(self, request):
         user = request.user.username
         user = user.replace('_',' ')
         user = user.title()
         qs = super().get_queryset(request)
-        if request.user.is_superuser:
-            return qs
         # Si el usuario es Oficial solamente podra cambiar su usuario
         if request.user.groups.filter(name='Officer').exists():
             return qs.filter(name=user)
@@ -41,5 +39,6 @@ class OfficerAdmin(admin.ModelAdmin):
                 return qs.filter(agency=user.agency)
             except Exception as e:
                 return qs
-    
+        if request.user.groups.filter(name='Admin').exists():
+            return qs
 admin.site.register(Officer,OfficerAdmin)
