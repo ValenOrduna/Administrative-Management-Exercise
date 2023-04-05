@@ -1,4 +1,13 @@
-﻿# Administrative Management Civitec
+# Administrative Management Civitec
+
+Administrative Management es un proyecto diseñado para la administración de un sistema de multas de la policía de manera sencilla y segura. Este sistema permite acceder a los datos de manera fácil y rápida, mientras mantiene la seguridad necesaria para el uso de los mismos. El objetivo de este proyecto es facilitar la visualización, actualización o inserción de datos, brindando una herramienta eficiente y efectiva para la gestión de multas.
+
+## Requisitos
+
+- Tener instalado Python 3 en el equipo.
+- # Tener dependencia Django instalada
+
+# Administrative Management Civitec
 
 Administrative Management es un proyecto diseñado para la administración de un sistema de multas de la policía de manera sencilla y segura. Este sistema permite acceder a los datos de manera fácil y rápida, mientras mantiene la seguridad necesaria para el uso de los mismos. El objetivo de este proyecto es facilitar la visualización, actualización o inserción de datos, brindando una herramienta eficiente y efectiva para la gestión de multas.
 
@@ -6,6 +15,7 @@ Administrative Management es un proyecto diseñado para la administración de un
 
 - Tener instalado Python 3 en el equipo.
 - Tener dependencia Django instalada
+  > > > > > > > e2a37815b3ca4d3094056ad57fb9746f54fff224
 
 ## Instalación
 
@@ -24,7 +34,17 @@ Pasos a seguir para la instalacion del proyecto:
 
 ## Tecnologías
 
-El proyecto se realizo con el Framework Django. Uno de los principales beneficios de Django es su arquitectura de modelos, que me permitió crear y administrar fácilmente los modelos de base de datos necesarios para la aplicación. También utilicé muchas de las aplicaciones integradas de Django, como el panel de administración y el sistema de autenticación de usuarios, lo que me permitió crear una aplicación robusta y segura.
+=======
+
+- Clonar el repositorio del proyecto en tu máquina local usando git:
+- `git clone https://github.com/ValenOrduna/Administrative-Management-Exercise.git `
+- Ejecutar el siguiente comando para descargar las dependencias necesarias:
+- `pip install -r requirements.txt`
+
+## Tecnologías
+
+> > > > > > > e2a37815b3ca4d3094056ad57fb9746f54fff224
+> > > > > > > El proyecto se realizo con el Framework Django. Uno de los principales beneficios de Django es su arquitectura de modelos, que me permitió crear y administrar fácilmente los modelos de base de datos necesarios para la aplicación. También utilicé muchas de las aplicaciones integradas de Django, como el panel de administración y el sistema de autenticación de usuarios, lo que me permitió crear una aplicación robusta y segura.
 
 En cuanto al diseño y estilos, utilicé Tailwind. Elegí Tailwind por su facilidad de uso y su capacidad para personalizar los estilos con facilidad. Me gustó especialmente la forma en que Tailwind utiliza clases predefinidas para estilizar los componentes, lo que me permitió trabajar con el HTML y CSS de una manera más sencilla y organizada.
 
@@ -52,5 +72,6 @@ Además, se pueden insertar nuevos endpoints en la aplicación para agregar más
 
 ## Contacto
 
-[Linkedin](https://www.linkedin.com/in/valentinorduna/)
-[GitHub](https://github.com/ValenOrduna)
+> > > > > > > e2a37815b3ca4d3094056ad57fb9746f54fff224
+> > > > > > > [Linkedin](https://www.linkedin.com/in/valentinorduna/)
+> > > > > > > [GitHub](https://github.com/ValenOrduna)
