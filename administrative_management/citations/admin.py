@@ -13,7 +13,7 @@ class CitationAdmin(admin.ModelAdmin):
         user = user.replace('_',' ')
         user = user.title()
         qs = super().get_queryset(request)
-        if request.user.is_superuser:
+        if request.user.groups.filter(name='Admin').exists():
             return qs
         # Si el usuario es Oficial solamente podra cambiar su usuario
         if request.user.groups.filter(name='Officer').exists():
