@@ -26,6 +26,7 @@ def createCitation(request):
             form =  CitationForm(request.POST)
             if form.is_valid():
                 try:
+                    # Si el formulario es valido subimos datos restantes para completar el ingreso a la base de datos
                     user = request.user.username
                     user = user.replace('_',' ')
                     user = user.title()
